@@ -128,7 +128,7 @@ const AdminEditMovie = () => {
     try {
       setLoading(true);
       const token = localStorage.getItem("token");
-      await axios.put(`http://localhost:5000/api/movies/${id}`, formData, {
+      await axios.put(`${BASE_URL}/api/movies/${id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`,
