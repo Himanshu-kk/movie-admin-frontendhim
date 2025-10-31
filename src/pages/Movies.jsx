@@ -52,7 +52,7 @@ const AdminMoviesList = () => {
     if (!window.confirm("Are you sure you want to delete this movie?")) return;
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`http://localhost:5000/api/movies/${id}`, {
+      await axios.delete(`${BASE_URL}/api/movies/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setMovies((prev) => prev.filter((m) => m._id !== id));
